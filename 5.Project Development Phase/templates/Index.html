@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>OptiCrop AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌱 OptiCrop AI</h1>
+
+<h2>Crop Recommendation System</h2>
+
+<form action="/predict" method="POST">
+
+<input type="number" step="any"
+name="N"
+placeholder="Nitrogen">
+
+<input type="number" step="any"
+name="P"
+placeholder="Phosphorus">
+
+<input type="number" step="any"
+name="K"
+placeholder="Potassium">
+
+<input type="number" step="any"
+name="temperature"
+placeholder="Temperature">
+
+<input type="number" step="any"
+name="humidity"
+placeholder="Humidity">
+
+<input type="number" step="any"
+name="ph"
+placeholder="pH">
+
+<input type="number" step="any"
+name="rainfall"
+placeholder="Rainfall">
+
+<button type="submit">
+Predict Crop
+</button>
+
+</form>
+
+<h2>{{ prediction_text }}</h2>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='script.js') }}"></script>
+
+</body>
+
+</html>
